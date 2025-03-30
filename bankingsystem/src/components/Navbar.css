@@ -1,0 +1,154 @@
+/* Navbar Styles */
+.bank-navbar {
+    background: linear-gradient(135deg, #1a237e, #0d47a1);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  
+  /* Add this to your global CSS */
+  body {
+    margin: 0;
+    padding-top: 70px; /* Adjust based on navbar height */
+  }
+  
+  .nav-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #ffffff, #e3f2fd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0 2rem;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.8rem 1.2rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: inline-block; /* Prevents wrapping */
+    white-space: nowrap; /* Ensures single line */
+    position: relative;
+  }
+  
+  .nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #4fc3f7;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+  }
+  
+  .nav-links a:hover::before {
+    width: 100%;
+  }
+  
+  .user-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .nav-links {
+      gap: 1.5rem;
+      padding: 0 1rem;
+    }
+    
+    .nav-links a {
+      padding: 0.6rem 1rem;
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .bank-navbar {
+      flex-wrap: wrap;
+      padding: 1rem;
+      gap: 1rem;
+    }
+  
+    .nav-brand {
+      font-size: 1.3rem;
+    }
+  
+    .nav-links {
+      order: 2;
+      width: 100%;
+      justify-content: space-around;
+      gap: 0.5rem;
+      padding: 0;
+    }
+  
+    .nav-links a {
+      padding: 0.5rem 0.8rem;
+      font-size: 0.9rem;
+    }
+  
+    .user-section {
+      order: 1;
+      margin-left: 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body {
+      padding-top: 110px; /* Adjusted for wrapped navbar */
+    }
+  
+    .nav-links {
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+  
+    .nav-links a {
+      padding: 0.4rem 0.6rem;
+      font-size: 0.85rem;
+    }
+  
+    .user-section {
+      gap: 0.8rem;
+    }
+  
+    .user-section button {
+      padding: 0.4rem 0.8rem;
+    }
+  }
